@@ -1,0 +1,10 @@
+{
+  "name": "PDF analysis (no LLM)",
+  "desc": "OCR → Embed → Search — fast, deterministic",
+  "modules": {},
+  "steps": [
+    { "type": "ocr", "input": "" },
+    { "type": "embed", "input": "" },
+    { "type": "search", "input": "bank margin loan amount" }
+  ]
+}
