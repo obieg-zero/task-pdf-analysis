@@ -1,4 +1,27 @@
 {
   "name": "PDF analysis (no LLM)",
-  "desc": "OCR → Embed → Search — fast, deterministic"
+  "desc": "OCR → Embed → Search — fast, deterministic",
+  "modules": {
+    "storage": {
+      "persistKeys": "pages,chunks",
+      "opfsRoot": "obieg-zero",
+      "revokeTimeout": 60000
+    },
+    "ocr": {
+      "language": "pol",
+      "ocrThreshold": 20,
+      "scale": 2
+    },
+    "embed": {
+      "model": "Xenova/multilingual-e5-small",
+      "dtype": "q8",
+      "chunkSize": 500,
+      "chunkOverlap": 50,
+      "minChunkLength": 10,
+      "topK": 5,
+      "keywordBoost": 0.05,
+      "maxContextChars": 2000,
+      "embedTimeout": 60000
+    }
+  }
 }
